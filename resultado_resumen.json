@@ -1,0 +1,47 @@
+{
+  "run_id": "corrida_2026-09-05_GS_BBH",
+  "run_date": "2026-09-05",
+  "clients": [
+    "GS",
+    "BBH"
+  ],
+  "resources_analyzed": {
+    "named_real_resources": 30,
+    "named_resources_excluded_by_restriction": 3,
+    "tbd_active_positions_current_state": 17,
+    "tbd_positions_pth0_excluded": 49
+  },
+  "overbooking": {
+    "resources_with_overbooking_before_proposal": 20,
+    "resources_with_overbooking_after_proposal": 0
+  },
+  "tbds": {
+    "argentina_tbds_in_flex_not_in_team_list": 3,
+    "new_proposed_tbds_created": 1
+  },
+  "movements": {
+    "total_movement_log_entries": 333,
+    "top_reasons": [
+      "Overbooking > 40h/55h semanales (mayoria de los movimientos)",
+      "Bloque TBD > capacidad semanal individual (TEST-05/06)",
+      "Sebastian Fauve Raul OOO 01-Feb y 08-Feb-2027",
+      "Jackson Da Silva - tope duro 20h"
+    ]
+  },
+  "forecast_budget_control": {
+    "control_1_etc_vs_actual": "no disponible para GS y BBH (sin snapshot historico adjunto en esta corrida)",
+    "control_2_budget_htd_vs_actual_htd": "calculado para 97 WBS de GS y 9 WBS de BBH",
+    "control_3_budget_vs_actual_etc": "calculado para 97 WBS de GS y 9 WBS de BBH"
+  },
+  "exceptions_and_limitations": [
+    "Sin snapshots historicos de Flex -> Control 1 no disponible (no se inventa ETC historico).",
+    "Categoria de Juan Pirez resuelta por mayoria de horas (Senior) ante Staff Level mixto sin promocion documentada.",
+    "Los controles de Budget/Actual+ETC por WBS incluyen TODOS los recursos del proyecto (no solo poblacion Argentina), ya que el budget de un WBS es del proyecto completo."
+  ],
+  "qa_result": {
+    "total_checks": 8,
+    "passed": 8
+  },
+  "human_review_required": true,
+  "production_change_executed": false
+}

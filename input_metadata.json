@@ -1,0 +1,38 @@
+{
+  "run_id": "corrida_2026-09-05_GS_BBH",
+  "run_date": "2026-09-05",
+  "clients": [
+    "GS",
+    "BBH"
+  ],
+  "current_flex_files": [
+    {
+      "client": "GS",
+      "filename": "The Goldman Sachs Group, Inc. - GS Group Team Audit Dec26 - ETC_EXPORT_09-03-2026_07-24-20_PM.xlsx",
+      "data_date": "2026-09-02",
+      "rows": 1850,
+      "sheet": "Resource Summary by PL"
+    },
+    {
+      "client": "BBH",
+      "filename": "Brown Brothers Harriman & Co. - BBH&Co. Audit Dec26 - ETC_EXPORT_09-03-2026_07-30-26_PM.xlsx",
+      "data_date": "2026-09-02",
+      "rows": 120,
+      "sheet": "Resource Summary by PL"
+    }
+  ],
+  "argentina_team_file": {
+    "filename": "Argentina Team.xlsx",
+    "gs_entries": 76,
+    "bbh_entries": 7
+  },
+  "prior_flex_snapshots": [],
+  "prior_snapshot_note": "No se adjuntaron snapshots historicos de Flex en esta corrida. El Control 1 (Prior ETC vs Subsequent Actual) queda marcado como 'Prior snapshot not available' para GS y BBH, sin reconstruir ni estimar el ETC previo (D-16).",
+  "kept_weeks_window": {
+    "count": 46,
+    "first_week": "2026-07-20",
+    "last_week": "2027-05-31",
+    "current_week": "2026-08-31",
+    "rule": "6 semanas Actual anteriores a la semana actual + semana actual (Actual+ETC) + todo el horizonte ETC futuro disponible en Flex."
+  }
+}

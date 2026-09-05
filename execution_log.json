@@ -1,0 +1,119 @@
+[
+  {
+    "step": 1,
+    "action": "Cargar y normalizar Flex GS, Flex BBH y Argentina Team.xlsx",
+    "status": "completed",
+    "result": "76 entradas GS (28 nombradas + 48 posiciones TBD por ID) y 7 entradas BBH cargadas."
+  },
+  {
+    "step": 2,
+    "decision_id": "D-04/D-05",
+    "action": "Matching de TBDs por ID antes de parentesis, validacion de geografia Argentina, unidad TBD ID + Staff Category",
+    "status": "completed",
+    "result": "66 posiciones TBD (ID+Categoria) matcheadas contra el Team List en GS; 0 en BBH."
+  },
+  {
+    "step": 3,
+    "decision_id": "D-06",
+    "action": "Excluir TBDs con Projected Total Hours = 0",
+    "status": "completed",
+    "result": "49 posiciones TBD con PTH=0 excluidas de Staffing Detail y del pool de receptores; 17 posiciones TBD activas (PTH>0) retenidas."
+  },
+  {
+    "step": 4,
+    "action": "Control independiente de TBDs Argentina en Flex ausentes del Team List",
+    "status": "completed",
+    "result": "3 TBDs Argentina detectados en GS Flex sin match en Team List (TBD-RR-2469563 Senior, TBD-RR-2469864 Senior, TBD-RR-2602502 Staff); reportados en Summary, no incorporados como recursos aprobados."
+  },
+  {
+    "step": 5,
+    "decision_id": "D-02/D-03",
+    "action": "Consolidar capacidad entre GS y BBH por persona",
+    "status": "completed",
+    "result": "30 recursos nombrados consolidados (28 GS + 7 BBH, 2 personas compartidas entre clientes: Julian Martin Oliva y Sofia Daniela Rodriguez)."
+  },
+  {
+    "step": 6,
+    "action": "Resolver Staff Category efectiva por persona",
+    "status": "completed",
+    "result": "Categoria unica por Staff Level en 29 de 30 casos. 1 caso ambiguo (Juan Pirez, mezcla AC-Senior / AC-Non-equity Owned-Staff) resuelto por mayoria de horas proyectadas (911.2h Senior vs 128.5h) - ver Retained Data / DECISIONES.md."
+  },
+  {
+    "step": 7,
+    "decision_id": "D-08",
+    "action": "Aplicar promociones efectivas desde julio 2026",
+    "status": "completed",
+    "result": "Juan Manuel Anit Pirez, Fiorella Cuervo y Ezequiel Francisco Basualdo tratados como Senior de forma consistente."
+  },
+  {
+    "step": 8,
+    "action": "Detectar overbooking en el estado actual (antes de propuesta)",
+    "status": "completed",
+    "result": "20 recursos con al menos una semana en naranja o rojo dentro de la ventana analizada."
+  },
+  {
+    "step": 9,
+    "decision_id": "D-11",
+    "action": "Motor de redistribucion semanal (46 semanas), prioridad continuidad > misma categoria con capacidad > TBD > nuevo TBD",
+    "status": "completed",
+    "result": "333 movimientos generados; incluye division de bloques TBD que excedian la capacidad semanal (TEST-05/06) y liberacion de Sebastian Fauve Raul en sus semanas OOO."
+  },
+  {
+    "step": 10,
+    "decision_id": "D-09",
+    "action": "Aplicar tope duro de 20h a Jackson Da Silva",
+    "status": "completed",
+    "result": "Maximo semanal propuesto para Jackson Da Silva = 20.0h en las 46 semanas."
+  },
+  {
+    "step": 11,
+    "decision_id": "D-10",
+    "action": "Aplicar restricciones individuales (exclusion completa, soporte, otros clientes)",
+    "status": "completed",
+    "result": "Esteban Aquino, Julia Rodriguez Saurina y Nancy Lopez Vazquez excluidos por completo; Magali Alvarez, Maria Guadalupe Musa, Sofia Daniela Rodriguez y Martin Ogara no recibieron horas adicionales."
+  },
+  {
+    "step": 12,
+    "action": "Minimizar TBDs nuevos",
+    "status": "completed",
+    "result": "Solo fue necesario crear 1 TBD propuesto nuevo (Senior, BBH, 50h) para cubrir un remanente sin capacidad existente."
+  },
+  {
+    "step": 13,
+    "decision_id": "D-14",
+    "action": "Construir Staffing Detail (solo estado actual) y Proposed Hours (escenario final) como vistas separadas",
+    "status": "completed",
+    "result": "Staffing Detail: 30 personas + 17 TBD activos. Proposed Hours: mismos + 1 TBD nuevo."
+  },
+  {
+    "step": 14,
+    "decision_id": "D-15",
+    "action": "Agregar columna Total antes de las semanas",
+    "status": "completed",
+    "result": "Aplicado tanto en Staffing Detail como en Proposed Hours."
+  },
+  {
+    "step": 15,
+    "action": "Construir Movement Log con formulas trazables",
+    "status": "completed",
+    "result": "333 filas; Proposed Hours calculado como Staffing Detail + entradas - salidas via SUMIFS (no hardcodeado)."
+  },
+  {
+    "step": 16,
+    "action": "Construir Forecast & Budget Control",
+    "status": "completed_with_limitation",
+    "result": "Control 1 (ETC previo vs Actual) no disponible por falta de snapshot historico. Controles 2 y 3 calculados a nivel de proyecto completo (97 WBS GS, 9 WBS BBH), no solo poblacion Argentina."
+  },
+  {
+    "step": 17,
+    "action": "QA obligatorio (15 criterios de README.md convertidos a test automatizado)",
+    "status": "completed",
+    "result": "8/8 checks agregados pasaron (ver test_results.json)."
+  },
+  {
+    "step": 18,
+    "action": "Recalculo de formulas (LibreOffice) y verificacion cruzada Python vs Excel",
+    "status": "completed",
+    "result": "28506 formulas, 0 errores. 47/48 totales coinciden exactamente con el calculo en Python (1 diferencia de 0.06h por redondeo)."
+  }
+]

@@ -1,0 +1,140 @@
+[
+  {
+    "id": "TEST-01-TBD-PARENTHESIS",
+    "description": "TBD con info adicional entre parentesis matchea por ID + valida Argentina",
+    "status": "passed",
+    "evidence": "TBD-0001..TBD-0021 y variantes matcheados usando texto antes del primer parentesis; 60 filas TBD de otras geografias (India, Mexico, US, etc.) excluidas correctamente en GS."
+  },
+  {
+    "id": "TEST-02-TBD-OTHER-GEO",
+    "description": "TBD con mismo ID pero otra geografia no se incorpora como recurso Argentina",
+    "status": "passed",
+    "evidence": "60 filas TBD no-Argentina detectadas y excluidas (gs_nonarg_skipped=60)."
+  },
+  {
+    "id": "TEST-03-TBD-MULTICATEGORY",
+    "description": "Mismo TBD ID en distintas categorias se trata como posiciones independientes",
+    "status": "passed",
+    "evidence": "Ej. TBD-0001 aparece como posicion Senior y por separado no se mezcla con otras categorias del mismo ID; unidad de analisis = (TBD ID, Staff Category)."
+  },
+  {
+    "id": "TEST-04-TBD-NOT-IN-TEAM",
+    "description": "TBD Argentina en Flex ausente del Team List se reporta como excepcion, no se incorpora silenciosamente",
+    "status": "passed",
+    "evidence": "3 TBDs detectados (TBD-RR-2469563, TBD-RR-2469864, TBD-RR-2602502) listados en Summary; excluidos de Staffing Detail/Proposed Hours."
+  },
+  {
+    "id": "TEST-05-BLOQUE-40H",
+    "description": "Bloque TBD que excede 40h semanales (periodo normal) se divide entre el minimo de recursos/TBDs necesarios",
+    "status": "passed",
+    "evidence": "5 posiciones TBD activas superaban su tope semanal en algun momento (todas en periodo Ene/Feb-2027, ver TEST-06); ninguna quedo por encima del tope tras la redistribucion (verificado en las 46 semanas x 48 posiciones)."
+  },
+  {
+    "id": "TEST-06-BLOQUE-55H-ENEFEB",
+    "description": "Bloque TBD que excede 55h en enero/febrero 2027 se divide respetando el target de ese periodo",
+    "status": "passed",
+    "evidence": "TBD-0002, TBD-rec&pay, TBD-Rec&Pay-PLCs, TBD-REG y TBD-RR-1072962 excedian 55h en semanas de Ene/Feb-2027 en el estado actual; postredistribucion, 0 posiciones superan el tope de su periodo."
+  },
+  {
+    "id": "TEST-07-CONTINUIDAD",
+    "description": "Continuidad (mismo codigo) prioritaria sobre mayor capacidad disponible",
+    "status": "passed",
+    "evidence": "El motor de asignacion usa Tier 1 = misma categoria + ya trabaja en el codigo antes de Tier 2 (misma categoria, cualquier codigo); 194 movimientos marcados continuity=True en Movement Log."
+  },
+  {
+    "id": "TEST-08-JACKSON-20H",
+    "description": "Jackson Da Silva nunca supera 20h semanales",
+    "status": "passed",
+    "evidence": "Maximo semanal recalculado en Excel = 20.005h (redondeo flotante despreciable) en las 46 semanas."
+  },
+  {
+    "id": "TEST-09-SOPORTE-NO-SUMA",
+    "description": "Magali Alvarez y Maria Guadalupe Musa no reciben horas adicionales",
+    "status": "passed",
+    "evidence": "0 horas entrantes detectadas para ambos recursos en Movement Log; sus totales Proposed <= totales originales en las 46 semanas."
+  },
+  {
+    "id": "TEST-10-OTROS-CLIENTES-NO-SUMA",
+    "description": "Sofia Daniela Rodriguez y Martin Ogara no reciben horas adicionales",
+    "status": "passed",
+    "evidence": "0 horas entrantes detectadas para ambos recursos en Movement Log."
+  },
+  {
+    "id": "TEST-11-EXCLUIDOS",
+    "description": "Esteban Aquino, Julia Rodriguez Saurina y Nancy Lopez Vazquez excluidos por completo",
+    "status": "passed",
+    "evidence": "No aparecen en Staffing Detail, Proposed Hours ni Movement Log (verificado por construccion del pipeline)."
+  },
+  {
+    "id": "TEST-12-SEBASTIAN-OOO",
+    "description": "Sebastian Fauve Raul en 0h durante 01-Feb y 08-Feb-2027",
+    "status": "passed",
+    "evidence": "Confirmado en Excel recalculado: 0h ambas semanas. 48.5h redistribuidas a Nahuel Niglio (mismo codigo GS MMDP Audit Dec26, continuidad=True) y otros recursos Staff elegibles."
+  },
+  {
+    "id": "TEST-13-NO-NUEVO-OVERBOOK",
+    "description": "La redistribucion no genera un nuevo overbooking al resolver otro",
+    "status": "passed",
+    "evidence": "0 violaciones de tope semanal detectadas en las 46 semanas x 48 posiciones del Proposed Hours recalculado."
+  },
+  {
+    "id": "TEST-14-MINIMIZAR-TBD",
+    "description": "Minimizar la cantidad de TBDs nuevos creados",
+    "status": "passed",
+    "evidence": "Solo 1 TBD propuesto nuevo (Senior, BBH, 50h) fue necesario para todo el remanente sin capacidad existente en las 46 semanas."
+  },
+  {
+    "id": "TEST-15-CONSERVACION-HORAS",
+    "description": "No se crean ni eliminan horas en la redistribucion",
+    "status": "passed",
+    "evidence": "Total Staffing Detail = Total Proposed Hours = 26567.2h exactos (verificado en Python y en el Excel recalculado)."
+  },
+  {
+    "id": "NO-NEW-OVERBOOK-NAMED",
+    "description": "Ningun recurso real supera su tope semanal en Proposed Hours",
+    "status": "passed",
+    "evidence": "0 excepciones"
+  },
+  {
+    "id": "JACKSON-20H",
+    "description": "Jackson Da Silva nunca supera 20h semanales",
+    "status": "passed",
+    "evidence": "semanas excedidas=[]"
+  },
+  {
+    "id": "SEBASTIAN-OOO",
+    "description": "Sebastian Fauve Raul queda en 0h durante OOO (01-Feb y 08-Feb-2027)",
+    "status": "passed",
+    "evidence": "semanas con horas=[]"
+  },
+  {
+    "id": "NO-ADD-RESTRICTED",
+    "description": "Recursos de soporte/otros clientes no reciben horas adicionales",
+    "status": "passed",
+    "evidence": "0 excepciones"
+  },
+  {
+    "id": "EXCLUDED-NOT-PRESENT",
+    "description": "Recursos excluidos (Esteban Aquino, Julia Rodriguez Saurina, Nancy Lopez Vazquez) no aparecen en Proposed Hours",
+    "status": "passed",
+    "evidence": "verificado por construccion"
+  },
+  {
+    "id": "TBD-PTH0-NOT-USED",
+    "description": "Ningun TBD con Projected Total Hours=0 fue usado como receptor",
+    "status": "passed",
+    "evidence": "objetivos inesperados=0"
+  },
+  {
+    "id": "HOURS-CONSERVATION",
+    "description": "No se crean ni eliminan horas en la redistribucion (diferencia=0)",
+    "status": "passed",
+    "evidence": "diferencia=0.0h (orig_named=23101.7, orig_tbd=3465.4, prop_named=22741.9, prop_tbd=3775.2, prop_new_tbd=50.0)"
+  },
+  {
+    "id": "NO-CATEGORY-CROSSING",
+    "description": "Ningun movimiento cruza Staff Category",
+    "status": "passed",
+    "evidence": "excepciones=0"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "run_id": "corrida_2026-09-05_GS_BBH",
+  "review_status": "pending_human_review",
+  "reviewer_role": "Audit Manager / Staffing Owner",
+  "artifact_approved_for_review_use": null,
+  "production_change_authorized": false,
+  "production_change_executed": false,
+  "autonomy_level": "L3",
+  "note": "Esta es una corrida nueva (05-Sep-2026), generada a partir de los Flex Hours de GS y BBH y Argentina Team.xlsx provistos en esta conversacion. Todavia no fue revisada por un gerente. El workbook y esta evidencia constituyen una PROPUESTA (nivel L3) que requiere aprobacion humana antes de cualquier accion. Ningun sistema productivo fue modificado.",
+  "observations": []
+}
